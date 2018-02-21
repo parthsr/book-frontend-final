@@ -23,9 +23,12 @@ class Board extends React.Component {
     }
     return (
       <div>
-        <p>{JSON.stringify(this.props.books)}</p>
+        <h1>The BookShelf</h1>
+        {/* <p>{JSON.stringify(this.props.books)}</p> */}
         <button onClick={() => this.onClick()}>lol</button>
-        <Container books={this.props.books} />
+        <Container
+          books={this.props.books}
+        />
       </div>
     );
   }

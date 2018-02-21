@@ -1,17 +1,27 @@
 import React from 'react';
 import img from './image.jpg';
+import { connect } from 'react-redux';
+import './Card.css';
+import { likeBook } from '../../redux/actions/actions';
 
-class Card extends React.Component {
-  render() {
-    return (
-      <div className="Card">
-        <img src={img} />
-        <p>{this.props.book.name}</p>
-        <h1>Rating</h1>a
-        <p>{this.props.book.author}</p>
-      </div>
-    );
-  }
-}
+const Card = props => (
+  <div className="Card">
+    <img className="Card-img"src={img} />
+    <button
+      className={props.book.likestatus === 'like' ? 'Card-like' : 'Card-unlike'}
+      onClick={props.likeABook(props.book)}
+    >like
+    </button>
+    <p className="CardName">{props.book.name}</p>
+    <h1>{props.book.rating}</h1>
+    <p className="Card-footer">{props.book.author}</p>
+  </div>
+);
 
-export default Card;
+
+const mapDispatchToProps = dispatch => ({
+  likeABook: book => dispatch(likeBook(book)),
+});
+
+export default connect(null, mapDispatchToProps)(Card);
+
