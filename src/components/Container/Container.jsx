@@ -8,11 +8,7 @@ const Container = (props) => {
   const contentToDisplay = [];
   for (let i = 0; i < books.length; i += 1) {
     const newcontentToDisplay =
-     (<div key={new Date() + i}>
-       <Card
-         book={books[i]}
-       />
-      </div>);
+     (<div key={new Date() + i}><Card book={books[i]} /></div>);
     contentToDisplay.push(newcontentToDisplay);
   }
   return (

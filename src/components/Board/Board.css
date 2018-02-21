@@ -1,0 +1,18 @@
+.Board-title{
+    background:red;
+    width:50%;
+}
+
+.Board-content{
+    display: flex;
+    flex-direction: column;
+}
+.Board-Column{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+.Board-div{
+    background-color: brown;
+    width:30%;
+}

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { getBooks } from '../../redux/actions/actions';
 import Container from '../Container/Container';
+import './Board.css';
 
 class Board extends React.Component {
   componentDidMount =() => {
@@ -10,25 +11,20 @@ class Board extends React.Component {
       this.props.getBooks(results.data);
     });
   }
-  onClick = () => {
-    axios({
-      method: 'POST',
-      url: '/allbooks',
-      data: this.props.books,
-    }).then(response => console.log(response.data));
-  }
   render() {
     if (this.props.books === {}) {
       return (<p>hi</p>);
     }
     return (
-      <div>
-        <h1>The BookShelf</h1>
-        {/* <p>{JSON.stringify(this.props.books)}</p> */}
-        <button onClick={() => this.onClick()}>lol</button>
-        <Container
-          books={this.props.books}
-        />
+      <div className="Board-Column">
+        <div className="Board-div" />
+        <div classNAME="Board-content">
+          <h1 className="Board-title">The BookShelf</h1>
+          {/* <p>{JSON.stringify(this.props.books)}</p> */}
+          <Container
+            books={this.props.books}
+          />
+        </div>
       </div>
     );
   }
