@@ -5,33 +5,30 @@ import { getBooks } from '../../redux/actions/actions';
 import Container from '../Container/Container';
 import './Board.css';
 
-class Board extends React.Component {
+const Board = (props) => {
   // componentDidMount =() => {
   //   axios.get('/allbooks').then((results) => {
   //     this.props.getBooks(results.data);
   //   });
-  // }
-  render() {
-    if (Object.keys(this.props.books).length === 0 && this.props.books.constructor === Object) {
-      axios.get('/allbooks').then((results) => {
-        this.props.getBooks(results.data);
-      });
-      return (<h1>hi</h1>);
-    }
-    return (
-      <div className="Board-Column">
-        <div className="Board-div" />
-        <div classNAME="Board-content">
-          <h1 className="Board-title">The BookShelf</h1>
-          {/* <p>{JSON.stringify(this.props.books)}</p> */}
-          <Container
-            books={this.props.books}
-          />
-        </div>
-      </div>
-    );
+  if (Object.keys(props.books).length === 0 && props.books.constructor === Object) {
+    axios.get('/allbooks').then((results) => {
+      props.getBooks(results.data);
+    });
+    return (<h1>hi</h1>);
   }
-}
+  return (
+    <div className="Board-Column">
+      <div className="Board-div" />
+      <div classNAME="Board-content">
+        <h1 className="Board-title">The BookShelf</h1>
+        {/* <p>{JSON.stringify(this.props.books)}</p> */}
+        <Container
+          books={props.books}
+        />
+      </div>
+    </div>
+  );
+};
 const mapStateToProps = state => ({
   books: state.books.books,
 });
