@@ -1,0 +1,11 @@
+.userProfilePic {
+    width: 64px;
+    display: initial;
+    position: absolute;
+    top: 150px;
+    border-radius: 100%;
+}
+.Container{
+    display: flex;
+    flex-direction: column;
+}
