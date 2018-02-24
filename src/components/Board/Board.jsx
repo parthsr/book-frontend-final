@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getBooks } from '../../redux/actions/actions';
 import Author from '../Author/Author';
@@ -12,11 +13,11 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.fetchData();
+    Board.propTypes = {
+      getBooks: PropTypes.func.isRequired,
+      books: PropTypes.string.isRequired,
+    };
   }
-  // componentDidMount =() => {
-  //   axios.get('/allbooks').then((results) => {
-  //     this.props.getBooks(results.data);
-  //   });
   fetchData = () => {
     axios.get('/allbooks').then((results) => {
       this.props.getBooks(results.data);
