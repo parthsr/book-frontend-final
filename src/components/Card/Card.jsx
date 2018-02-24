@@ -5,26 +5,42 @@ import './Card.css';
 import { likeBook } from '../../redux/actions/actions';
 
 class Card extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      like: this.props.book.likestatus,
+    };
+  }
   liking=() => {
-    // if (this.style.color === 'rgb(255, 0, 0)') {
-    //   this.style.color = 'rgb(0,0,0)';
-    // } else {
-    //   this.style.color = '';
-    // }
+    if (this.state.like === 'like') {
+      this.setState({
+        like: 'dislike',
+      });
+    } else {
+      this.setState({
+        like: 'like',
+      });
+    }
     this.props.likeABook(this.props.book);
   }
   render() {
     return (
       <div className="Card">
-        <img className="Card-img" src={img} alt="picture" />
-        <button
-          className={this.props.book.likestatus === 'like' ? 'Card-like' : 'Card-unlike'}
-          onClick={() => this.liking()}
-        >like
-        </button>
-        <p className="CardName">{this.props.book.name}</p>
-        <h1>{this.props.book.rating}</h1>
-        <p className="Card-footer">{this.props.book.author}</p>
+        <div className="Card-img" />
+        <div className="Card-content">
+          <div className={this.state.like === 'like' ? 'Card-icon-Holder-like' : 'Card-icon-Holder-unlike'}>
+            <div
+              className="Card-icon"
+              onClick={() => this.liking()}
+            >
+              <i className="material-icons">favorite</i>
+            </div>
+          </div>
+
+          <p className="Card-cardName">{this.props.book.name}</p>
+          <p className="Card-rating">{this.props.book.rating}</p>
+          <p className="Card-footer">{this.props.book.author}</p>
+        </div>
       </div>
     );
   }

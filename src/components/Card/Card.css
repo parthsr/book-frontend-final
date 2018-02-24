@@ -1,27 +1,65 @@
 
 .Card {
     position:relative;
-    margin:20px;
-    padding:20px;
-    background-color: green;
+    margin:40px;
+    background-color: white;
     border-radius: 20px;
-    
+    overflow: hidden;
+    height: 380px;
+    width:300px;
+    box-shadow:0 0 20px rgb(160, 105, 69);
 }
 .Card-footer{
     position:absolute;
     bottom:0;
     right:10px;
-}
-.CardName{
-    text-align: right;
-}
-.Card-img{
-    width:100%;
+    font-weight: bold;
 }
 
-.Card-like{
-    color:red;
+.Card-img{
+    background-image: url('./image.jpg');
+    background-repeat: no-repeat;
+    background-size: 110%;
+    height:50%;
+    background-position: center;
 }
-.Card-unlike{
-    color:black;
+
+.Card-icon-Holder-unlike{
+    background-color:grey;
+    border-radius: 35px;
+    height:35px;
+    width:35px;
+    position: absolute;
+    right:0;
+    padding:3px;
+    top:170px;
+    right:10px;
+}
+.Card-icon{
+    color:white;
+    padding-top:6px;
+    padding-left:5.5px;
+}
+.Card-icon-Holder-like{
+    background-color:red;
+    border-radius: 35px;
+    height:35px;
+    width:35px;
+    position: absolute;
+    right:0;
+    padding:3px;
+    top:170px;
+    right:10px;
+}
+.Card-content{
+    padding:10px;
+}
+
+.Card-cardName{
+    font-weight: bold;
+}
+.Card-rating{
+    font-size:200%;
+    font-weight:normal;
+    color:rgb(100,100,100);
 }
