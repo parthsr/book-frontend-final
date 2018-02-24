@@ -1,4 +1,5 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 import './Loader.css';
 
 const Loader = props => (
@@ -9,4 +10,7 @@ const Loader = props => (
   </div>
 );
 
+Loader.propTypes = {
+  fetchIntoDb: Proptypes.func.isRequired,
+};
 export default Loader;

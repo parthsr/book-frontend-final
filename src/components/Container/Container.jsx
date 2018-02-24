@@ -1,10 +1,10 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 import Card from '../Card/Card';
 import './Container.css';
 
 const Container = (props) => {
   const { books } = props;
-  console.log(books);
   const contentToDisplay = [];
   for (let i = 0; i < books.length; i += 1) {
     const newcontentToDisplay =
@@ -17,5 +17,7 @@ const Container = (props) => {
     </div>
   );
 };
-
+Container.propTypes = {
+  books: Proptypes.string.isRequired,
+};
 export default Container;
