@@ -1,19 +1,13 @@
-.Board-title{
-    background:red;
-    width:50%;
-    top:0px
-}
-
 .Board-content{
-    display: flex;
-    flex-direction: column;
+    padding-left:100px;
 }
 .Board-Column{
     display:flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
 }
-.Board-div{
-    background-color: brown;
-    width:30%;
-}
+
+
+
+
+

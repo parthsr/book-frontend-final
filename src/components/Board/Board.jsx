@@ -2,33 +2,57 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { getBooks } from '../../redux/actions/actions';
-import Container from '../Container/Container';
+import Author from '../Author/Author';
+import Header from '../Header/Header';
+import SideNav from '../SideNav/SideNav';
+import Loader from '../Loader/Loader';
 import './Board.css';
 
-const Board = (props) => {
+class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.fetchData();
+  }
   // componentDidMount =() => {
   //   axios.get('/allbooks').then((results) => {
   //     this.props.getBooks(results.data);
   //   });
-  if (Object.keys(props.books).length === 0 && props.books.constructor === Object) {
+  fetchData = () => {
     axios.get('/allbooks').then((results) => {
-      props.getBooks(results.data);
+      this.props.getBooks(results.data);
     });
-    return (<h1>hi</h1>);
   }
-  return (
-    <div className="Board-Column">
-      <div className="Board-div" />
-      <div classNAME="Board-content">
-        <h1 className="Board-title">The BookShelf</h1>
-        {/* <p>{JSON.stringify(this.props.books)}</p> */}
-        <Container
-          books={props.books}
-        />
+
+  fetchIntoDb=() => {
+    const options = {
+      url: '/store',
+      method: 'POST',
+    };
+    axios(options).then(() => this.fetchData());
+  }
+  render = () => {
+    if (Object.keys(this.props.books).length === 0) {
+      return (
+        <div className="Board-Column">
+          <SideNav />
+          <div className="Board-content">
+            <Header />
+            <Loader fetchIntoDb={this.fetchIntoDb} />
+          </div>
+        </div>
+      );
+    }
+    return (
+      <div className="Board-Column">
+        <SideNav />
+        <div className="Board-content">
+          <Header />
+          <Author books={this.props.books} />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
+}
 const mapStateToProps = state => ({
   books: state.books.books,
 });
