@@ -1,5 +1,5 @@
 import React from 'react';
-import img from './image.jpg';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './Card.css';
 import { likeBook } from '../../redux/actions/actions';
@@ -9,6 +9,10 @@ class Card extends React.Component {
     super(props);
     this.state = {
       like: this.props.book.likestatus,
+    };
+    Card.propTypes = {
+      book: PropTypes.string.isRequired,
+      likeABook: PropTypes.func.isRequired,
     };
   }
   liking=() => {
