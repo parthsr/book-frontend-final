@@ -1,0 +1,28 @@
+.Board-div{
+    background-color:rgb(46,58,70);
+    width:100px;
+    position:fixed;
+    height:1000px;
+}
+
+.Board-bs{
+    font-size: 50px;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    padding-top:5px;
+    padding-left:20px;
+    margin:0;
+    position:fixed;
+}
+
+.Board-button{
+    position: fixed;
+    bottom:0;
+}
+.Board-button>p>i ,.Board-button>i {
+    padding-left:25px;
+    font-size:40px;
+    color:white;
+    padding-bottom:30px;
+}
