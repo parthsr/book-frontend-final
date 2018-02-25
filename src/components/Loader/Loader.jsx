@@ -4,9 +4,9 @@ import './Loader.css';
 
 const Loader = props => (
   <div className="Loader-refresh">
-    <h1> OOPS ! No books found!</h1>
-    <h1> Import them Now ?</h1>
-    <p><i className="material-icons" onClick={() => props.fetchIntoDb()}>refresh</i></p>
+    <h1> Oops ! No books found!</h1>
+    <h1> Import them now ?</h1>
+    <button><i className="material-icons" onClick={() => props.fetchIntoDb()}>refresh</i></button>
   </div>
 );
 
