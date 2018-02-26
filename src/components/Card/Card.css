@@ -1,19 +1,24 @@
 
 .Card {
     position:relative;
-    margin:40px;
+    margin:30px 2vw;
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
-    height: 380px;
-    width:300px;
-    box-shadow:0 0 20px rgb(160, 105, 69);
+    /* height: 380px; */
+    min-width:300px;
+    min-height: 380px;
+    box-shadow:0 0 5px #222;
+    width:18vw;
+    height: 20vw;
 }
 .Card-footer{
     position:absolute;
-    bottom:0;
+    bottom:20px;
     right:10px;
     font-weight: bold;
+    text-transform: uppercase;
+    font-size:15px;
 }
 
 .Card-img{
@@ -27,13 +32,14 @@
 .Card-icon-Holder-unlike{
     background-color:grey;
     border-radius: 35px;
-    height:35px;
+    min-height:35px;
     width:35px;
     position: absolute;
     right:0;
     padding:3px;
-    top:170px;
+    top:-20px;
     right:10px;
+    box-shadow:-1px 1px 2px rgb(63, 63, 63);
 }
 .Card-icon{
     color:white;
@@ -48,11 +54,14 @@
     position: absolute;
     right:0;
     padding:3px;
-    top:170px;
+    top:-20px;
     right:10px;
+    box-shadow:-1px 1px 2px rgb(63, 63, 63);
 }
 .Card-content{
+    height:50%;
     padding:10px;
+    position: relative;
 }
 
 .Card-cardName{
@@ -61,6 +70,6 @@
 }
 .Card-rating{
     font-size:200%;
-    font-weight:normal;
-    color:rgb(100,100,100);
+    font-weight:lighter;
+    color:rgb(0, 0, 0);
 }

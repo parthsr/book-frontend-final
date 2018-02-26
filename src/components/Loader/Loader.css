@@ -4,12 +4,12 @@
     border-width: 1px;
     position: relative;
     bottom:0;
-    margin:200px 350px;
+    margin:250px 450px;
     text-align:center;
-    padding-right:120px;
-    padding-left:120px;
-    padding-top: 30px;
-    padding-bottom:40px;
+    padding-right:150px;
+    padding-left:150px;
+    padding-top: 50px;
+    padding-bottom:60px;
     border-radius: 10px;
 }
 .Loader-refresh>button>i{
