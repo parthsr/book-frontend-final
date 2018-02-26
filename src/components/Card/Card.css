@@ -57,6 +57,7 @@
 
 .Card-cardName{
     font-weight: bold;
+    max-height: 20px;
 }
 .Card-rating{
     font-size:200%;
